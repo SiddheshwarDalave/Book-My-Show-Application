@@ -24,7 +24,10 @@ public class ShowSeatEntity {
     private int id;
 
     @Column(name = "seat_no",nullable = false)
-    String seat_no;
+    private String seat_no;
+
+    @Column (name = "rate",nullable = false)
+    private int rate;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "seat_types",nullable = false)

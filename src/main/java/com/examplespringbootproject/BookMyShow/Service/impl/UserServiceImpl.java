@@ -25,10 +25,21 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto getUser(int id) {
-        Optional<UserEntity> userEntity=userRepository.findById(id);
+        //since i  need to return the userdto i have to convert entity to dto
+
+//        Optional<UserEntity> userEntity=userRepository.findById(id);
+//        UserDto userDto=UserConverter.convertEntityToDto(userEntity);
+
+        //if i don't want to use optional then>>
+        UserEntity userEntity=userRepository.findById(id).get();//orElse(null or by default);// get retun null if object does not found anything
         UserDto userDto=UserConverter.convertEntityToDto(userEntity);
         return userDto;
-        //since i  need to return the userdto i have to convert entity to dto
+
+        //or
+//        Optional<UserEntity> userEntity=userRepository.findById(id);//orElse(null or by default);// get retun null if object does not found anything
+//        UserDto userDto=UserConverter.convertEntityToDto(userEntity.get());
+//        return userDto; //no need to change anything in convertor 2
+
 
     }
 }
