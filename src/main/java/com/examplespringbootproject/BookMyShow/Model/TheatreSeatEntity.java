@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@ToString
+
 @Entity
 @Table(name="TheatreSeat_data")
 public class TheatreSeatEntity {
@@ -20,14 +20,14 @@ public class TheatreSeatEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "seat_no",nullable = false)
+    @Column(name = "seat_no")
     private String seat_no;
 
-    @Column(name = "seat_no",nullable = false,insertable = false,updatable = false)
+    @Column(name = "rate")
     private int rate;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "Seat_type",nullable = false)
+    @Column(name = "Seat_type")
     private SeatTypes seat_type;
 
     //relation

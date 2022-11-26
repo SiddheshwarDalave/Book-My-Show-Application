@@ -1,9 +1,11 @@
 package com.examplespringbootproject.BookMyShow.Service;
 
+import com.examplespringbootproject.BookMyShow.DTO.EntryDto.ShowEntryDto;
+import com.examplespringbootproject.BookMyShow.DTO.ResponseDto.ShowResponseDto;
 import com.examplespringbootproject.BookMyShow.DTO.ShowDto;
 
 public interface ShowService {
-    ShowDto  addShow(ShowDto showDto);
+    ShowResponseDto addShow(ShowEntryDto showEntryDto);
 
-    ShowDto getShowById(int id);
+    ShowResponseDto getShowById(int id);
 }

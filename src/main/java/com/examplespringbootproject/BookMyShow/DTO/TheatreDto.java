@@ -2,6 +2,8 @@ package com.examplespringbootproject.BookMyShow.DTO;
 
 import lombok.*;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -18,5 +20,5 @@ public class TheatreDto {
     //theatre seat-> dont need to pass //declare in theatre service impl
 
     //showEntity
-    ShowDto showDto;
+    List<ShowDto> showDtoList;
 }

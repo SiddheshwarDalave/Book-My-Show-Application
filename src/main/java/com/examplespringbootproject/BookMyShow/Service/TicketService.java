@@ -1,9 +1,11 @@
 package com.examplespringbootproject.BookMyShow.Service;
 
+import com.examplespringbootproject.BookMyShow.DTO.BookTicketRequestDto;
+import com.examplespringbootproject.BookMyShow.DTO.ResponseDto.TicketResponseDto;
 import com.examplespringbootproject.BookMyShow.DTO.TicketDto;
 
 public interface TicketService {
-    TicketDto getTicket(int id);
+    TicketDto getTicket(int id); //hw
 
-    void addTicket(TicketDto ticketDto);
+    TicketResponseDto addTicket(BookTicketRequestDto bookTicketRequestDto);
 }

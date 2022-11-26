@@ -17,12 +17,11 @@ import java.util.List;
 @Entity
 @Builder
 @EntityListeners(value = {AuditingEntityListener.class})//not known till
-@ToString
 @Table (name="Ticket")
 public class TicketEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
 
     @Column(name = "allocated_seats",nullable = false)
     private String allocated_seat;
@@ -59,7 +58,7 @@ public class TicketEntity {
     private ShowEntity showEntity;
 
     //List<ShowSeats> relation -> ticket is the parent
-    @OneToMany(mappedBy = "showEntity",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "showEntity1",cascade = CascadeType.ALL)
     @JsonIgnore
     private List<ShowSeatEntity> listOfShowSeatEntity;
     //done

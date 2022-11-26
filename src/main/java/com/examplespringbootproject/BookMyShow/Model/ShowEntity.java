@@ -20,7 +20,7 @@ import java.util.List;
 @NoArgsConstructor
 @EntityListeners(value = {AuditingEntityListener.class})
 @Builder
-@ToString
+
 @Entity
 @Table(name = "Show_Data")
 public class ShowEntity {
@@ -28,10 +28,10 @@ public class ShowEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "show_date",columnDefinition = "DATE",nullable = false)
+    @Column(name = "show_date",columnDefinition = "DATE")
     private LocalDate show_date;//private Date show_date;->previous // written what they used
 
-    @Column(name = "show_time",columnDefinition = "TIME",nullable = false)
+    @Column(name = "show_time",columnDefinition = "TIME")
     private LocalTime show_time;
 
 //created At
@@ -61,7 +61,7 @@ public class ShowEntity {
     private List<TicketEntity> listOfTicketEntity;
 
     //List<ShowSeatEntity>
-    @OneToMany(mappedBy = "showEntity",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "showEntity1",cascade = CascadeType.ALL)
     private List<ShowSeatEntity> listOfShowSeatEntity;
 
     //pending

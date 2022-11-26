@@ -1,6 +1,7 @@
 package com.examplespringbootproject.BookMyShow.Model;
 
 import com.examplespringbootproject.BookMyShow.Enums.SeatTypes;
+import com.examplespringbootproject.BookMyShow.Enums.TheatreType;
 import com.fasterxml.jackson.annotation.JacksonInject;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
@@ -13,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@ToString
+
 @Entity
 @Table(name = "Theatre_detail")
 public class TheatreEntity {
@@ -21,15 +22,16 @@ public class TheatreEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="name",nullable = false)
+    @Column(name="name")
     private String name;
 
-    @Column(name = "city",nullable = false)
+    @Column(name = "city")
     private String city;
 
-    @Column(name = "address",nullable = false)
+    @Column(name = "address")
     private String address;
 
+    TheatreType type;
 
     //relation
     @OneToMany(mappedBy = "theatreEntity", cascade = CascadeType.ALL)

@@ -1,10 +1,14 @@
 package com.examplespringbootproject.BookMyShow.Service;
 
+import com.examplespringbootproject.BookMyShow.DTO.EntryDto.TheatreEntryDto;
+import com.examplespringbootproject.BookMyShow.DTO.ResponseDto.TheatreResponseDto;
 import com.examplespringbootproject.BookMyShow.DTO.TheatreDto;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface TheatreService {
 
-    TheatreDto addTheatre(TheatreDto theatreDto);
+    TheatreEntryDto addTheatre(TheatreEntryDto theatreEntryDto);
 
-    TheatreDto getTheatre(int id);
+    TheatreResponseDto getTheatre(int id);
 }

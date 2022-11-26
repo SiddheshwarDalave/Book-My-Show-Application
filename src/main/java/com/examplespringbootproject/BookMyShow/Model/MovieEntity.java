@@ -13,17 +13,17 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Builder
-@ToString
+
 @Table(name = "Movie_data")
 public class MovieEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name",nullable = false)
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "release_date",columnDefinition = "DATE",nullable = false)
+    @Column(name = "release_date",columnDefinition = "DATE")
     private LocalDate showDate;
 
     //relation if any

@@ -15,7 +15,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@ToString
+
 @Entity
 @Table(name = "Allocated_seat")
 public class ShowSeatEntity {
@@ -23,22 +23,22 @@ public class ShowSeatEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "seat_no",nullable = false)
+    @Column(name = "seat_no")
     private String seat_no;
 
-    @Column (name = "rate",nullable = false)
+    @Column (name = "rate")
     private int rate;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "seat_types",nullable = false)
+    @Column(name = "seat_types")
     private SeatTypes seat_type;
 
-    @Column(name = "is_booked",nullable = false)
+    @Column(name = "is_booked")
     private boolean isBooked;
     //time stamp
     //@CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "booked_at",nullable = false)
+    @Column(name = "booked_at")
     private Date bookedAt;
 
 
@@ -56,7 +56,7 @@ public class ShowSeatEntity {
     @ManyToOne
     @JoinColumn
     @JsonIgnore
-    private ShowEntity showEntity;
+    private ShowEntity showEntity1;
 
 
 //done

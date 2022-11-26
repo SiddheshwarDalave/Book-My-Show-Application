@@ -18,17 +18,14 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto increment in individual class
     private int id;
 
-    @Column(name="name",nullable = false)
+    @Column(name="name")
     private String name;
 
-    @Column(name="mobile",nullable = false)
+    @Column(name="mobile")
     private String mobile;
 
     //mapping relation
     @OneToMany(mappedBy ="user",cascade = CascadeType.ALL) //user<->TicketEntity
     private List<TicketEntity> listOfTicketEntity;
 
-    //list of ticketEntity
-    //pending part-done
-//done
 }
